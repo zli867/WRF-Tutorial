@@ -1,0 +1,51 @@
+&CONTROL
+
+ anthro_dir = '../../DATA/NEI2017'
+ wrf_dir    = '../../DATA/wrfdata'
+ src_lon_dim_name = 'COL'
+ src_lat_dim_name = 'ROW'
+ domains = 4
+
+ sec_file_prefix = 'emis_mole_' 
+ sec_file_suffix = '_12US1_nobeis_norwc_2017gb_17j.ncf'
+
+ stk_file_prefix = 'inln_mole_' 
+ stk_file_suffix = '_12US1_cmaq_cb6ae7_2017gb_17j.ncf'
+ stk_grp_file_suffix = '_12US1_cmaq_cb6ae7_2017gb_17j.ncf'
+
+ src_names(1:8) = 'all:epa-sector','rwc:epa-sector','cmv_c3_12:epa-stack','cmv_c1c2_12:epa-stack','othpt:epa-stack','ptegu:epa-stack','ptnonipm:epa-stack','pt_oilgas:epa-stack'
+ sub_categories(1:10)   = 'CO','NO','NO2','SO2','NH3','ETOH','PAR','IOLE','ETH','ETHA'
+ sub_categories(11:20)  = 'OLE','PRPA','FORM','ALD2','ALDX','ACET','MEOH','KET','TOL','BENZ'
+ sub_categories(21:27)  = 'XYLMN','ISOP','TERP','SULF','ETHY','HONO','ACROLEIN'
+ sub_categories(28:34)  = 'PMOTHR','PEC','POC','PMC','PSO4','PNO3','PNH4'
+
+ start_output_time = '2017-04-06_00:00:00'
+ stop_output_time  = '2017-04-07_00:00:00'
+ emissions_zdim_stag = 10
+
+ emis_map(1) = 'CO->all(CO)+cmv_c3_12(CO)+othpt(CO)+ptegu(CO)+cmv_c1c2_12(CO)+pt_oilgas(CO)+ptnonipm(CO)+rwc(CO)'
+ emis_map(2) = 'NO->all(NO+HONO)+cmv_c3_12(NO+HONO)+othpt(NO+HONO)+ptegu(NO+HONO)+cmv_c1c2_12(NO+HONO)+pt_oilgas(NO+HONO)+ptnonipm(NO+HONO)+rwc(NO+HONO)'
+ emis_map(3) = 'NO2->all(NO2)+cmv_c3_12(NO2)+othpt(NO2)+ptegu(NO2)+cmv_c1c2_12(NO2)+pt_oilgas(NO2)+ptnonipm(NO2)+rwc(NO2)'
+ emis_map(4) = 'SO2->all(SO2)+cmv_c3_12(SO2)+othpt(SO2)+ptegu(SO2)+cmv_c1c2_12(SO2)+pt_oilgas(SO2)+ptnonipm(SO2)+rwc(SO2)'
+ emis_map(5) = 'NH3->all(NH3)+cmv_c3_12(NH3)+othpt(NH3)+ptegu(NH3)+cmv_c1c2_12(NH3)+pt_oilgas(NH3)+ptnonipm(NH3)+rwc(NH3)'
+ emis_map(6) = 'C2H5OH->all(ETOH)+cmv_c3_12(ETOH)+othpt(ETOH)+ptegu(ETOH)+cmv_c1c2_12(ETOH)+pt_oilgas(ETOH)+ptnonipm(ETOH)+rwc(ETOH)'
+ emis_map(7) = 'BIGALK->.2*all(PAR)+.2*cmv_c3_12(PAR)+.2*othpt(PAR)+.2*ptegu(PAR)+.2*cmv_c1c2_12(PAR)+.2*pt_oilgas(PAR)+.2*ptnonipm(PAR)+.2*rwc(PAR)'
+ emis_map(8) = 'BIGENE->all(IOLE)+cmv_c3_12(IOLE)+othpt(IOLE)+ptegu(IOLE)+cmv_c1c2_12(IOLE)+pt_oilgas(IOLE)+ptnonipm(IOLE)+rwc(IOLE)'
+ emis_map(9) = 'C2H4->all(ETH)+cmv_c3_12(ETH)+othpt(ETH)+ptegu(ETH)+cmv_c1c2_12(ETH)+pt_oilgas(ETH)+ptnonipm(ETH)+rwc(ETH)'
+ emis_map(10) = 'C2H6->all(ETHA)+cmv_c3_12(ETHA)+othpt(ETHA)+ptegu(ETHA)+cmv_c1c2_12(ETHA)+pt_oilgas(ETHA)+ptnonipm(ETHA)+rwc(ETHA)'
+ emis_map(11) = 'C3H6->all(OLE)+cmv_c3_12(OLE)+othpt(OLE)+ptegu(OLE)+cmv_c1c2_12(OLE)+pt_oilgas(OLE)+ptnonipm(OLE)+rwc(OLE)'
+ emis_map(12) = 'C3H8->all(PRPA+ETHY)+cmv_c3_12(PRPA+ETHY)+othpt(PRPA+ETHY)+ptegu(PRPA+ETHY)+cmv_c1c2_12(PRPA+ETHY)+pt_oilgas(PRPA+ETHY)+ptnonipm(PRPA+ETHY)+rwc(PRPA+ETHY)'
+ emis_map(13) = 'CH2O->all(FORM)+cmv_c3_12(FORM)+othpt(FORM)+ptegu(FORM)+cmv_c1c2_12(FORM)+pt_oilgas(FORM)+ptnonipm(FORM)+rwc(FORM)'
+ emis_map(14) = 'CH3CHO->all(ALD2+ALDX)+cmv_c3_12(ALD2+ALDX)+othpt(ALD2+ALDX)+ptegu(ALD2+ALDX)+cmv_c1c2_12(ALD2+ALDX)+pt_oilgas(ALD2+ALDX)+ptnonipm(ALD2+ALDX)+rwc(ALD2+ALDX)'
+ emis_map(15) = 'CH3COCH3->all(ACET)+cmv_c3_12(ACET)+othpt(ACET)+ptegu(ACET)+cmv_c1c2_12(ACET)+pt_oilgas(ACET)+ptnonipm(ACET)+rwc(ACET)'
+ emis_map(16) = 'CH3OH->all(MEOH)+cmv_c3_12(MEOH)+othpt(MEOH)+ptegu(MEOH)+cmv_c1c2_12(MEOH)+pt_oilgas(MEOH)+ptnonipm(MEOH)+rwc(MEOH)'
+ emis_map(17) = 'MEK->all(KET)+cmv_c3_12(KET)+othpt(KET)+ptegu(KET)+cmv_c1c2_12(KET)+pt_oilgas(KET)+ptnonipm(KET)+rwc(KET)'
+ emis_map(18) = 'TOLUENE->all(TOL+BENZ+XYLMN)+cmv_c3_12(TOL+BENZ+XYLMN)+othpt(TOL+BENZ+XYLMN)+ptegu(TOL+BENZ+XYLMN)+cmv_c1c2_12(TOL+BENZ+XYLMN)+pt_oilgas(TOL+BENZ+XYLMN)+ptnonipm(TOL+BENZ+XYLMN)+rwc(TOL+BENZ+XYLMN)'
+ emis_map(19) = 'ISOP->all(ISOP+ACROLEIN)+cmv_c3_12(ISOP)+othpt(ISOP)+ptegu(ISOP+ACROLEIN)+cmv_c1c2_12(ISOP)+pt_oilgas(ISOP+ACROLEIN)+ptnonipm(ISOP+ACROLEIN)+rwc(ISOP+ACROLEIN)'
+ emis_map(20) = 'C10H16->all(TERP)+cmv_c3_12(TERP)+othpt(TERP)+ptegu(TERP)+cmv_c1c2_12(TERP)+pt_oilgas(TERP)+ptnonipm(TERP)+rwc(TERP)'
+ emis_map(21) = 'sulf->all(SULF)+cmv_c3_12(SULF)+othpt(SULF)+ptegu(SULF)+cmv_c1c2_12(SULF)+pt_oilgas(SULF)+ptnonipm(SULF)+rwc(SULF)'
+ emis_map(22) = 'PM_25(A)->all(PMOTHR)+cmv_c3_12(PMOTHR)+othpt(PMOTHR)+ptegu(PMOTHR)+cmv_c1c2_12(PMOTHR)+pt_oilgas(PMOTHR)+ptnonipm(PMOTHR)+rwc(PMOTHR)'
+ emis_map(23) = 'BC(A)->all(PEC)+cmv_c3_12(PEC)+othpt(PEC)+ptegu(PEC)+cmv_c1c2_12(PEC)+pt_oilgas(PEC)+ptnonipm(PEC)+rwc(PEC)'
+ emis_map(24) = 'OC(A)->all(POC)+cmv_c3_12(POC)+othpt(POC)+ptegu(POC)+cmv_c1c2_12(POC)+pt_oilgas(POC)+ptnonipm(POC)+rwc(POC)'
+ emis_map(25) = 'PM_10(A)->all(PMC)+cmv_c3_12(PMC)+othpt(PMC)+ptegu(PMC)+cmv_c1c2_12(PMC)+pt_oilgas(PMC)+ptnonipm(PMC)+rwc(PMC)'
+/
